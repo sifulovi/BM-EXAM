@@ -1,27 +1,62 @@
-# UserPortal
+# User Portal
+>   'Laugh and the world laughs with you, snore and you sleep alone.'
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.3.
+This is very basic .net core webApi project with Angular 7.
+To run this project you have need to carefully pass under steps.
+###### Project Features are :
+ - User Registraion
+ - User Login
+ - List of Users in Dashboard
 
-## Development server
+##### Techonologies
+- DotNet core
+ - Angular 7 with Material UI
+ - SQL Server
+ - JWT 
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+##### DB Setup  
+Firstly run this SQL script in your Microsoft SQL Server Management Studio
 
-## Code scaffolding
+```sh
+USE [UserPortal ]
+GO
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+/****** Object:  Table [dbo].[TblUser]    Script Date: 8/5/2019 12:57:41 AM ******/
+SET ANSI_NULLS ON
+GO
 
-## Build
+SET QUOTED_IDENTIFIER ON
+GO
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+CREATE TABLE [dbo].[TblUser](
+	[UserID] [int] IDENTITY(1,1) NOT NULL,
+	[FullName] [varchar](50) NULL,
+	[Email] [varchar](50) NULL,
+	[Address] [varchar](50) NULL,
+	[Role] [varchar](50) NULL,
+	[Password] [varbinary](128) NULL,
+	[Salt] [varbinary](128) NULL,
+ CONSTRAINT [PK_TblUser] PRIMARY KEY CLUSTERED 
+(
+	[UserID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+```
+#####  Back-end Starter
+ 1. Open the **webApi** project in your visual studio or any IDE where .net core project can run.
+ 2. Build The Solution 
+ 3. Start Without Debugging 
 
-## Running unit tests
+#####  Front-end Starter
+ 1. Go **userPortal** directory .
+ 2. Write **npm install** command
+ ``` 
+nmp install
+ ```
+ 3. Write **ng serve** to run the project.
+  ``` 
+ng serve
+ ```
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
