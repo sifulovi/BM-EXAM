@@ -1,0 +1,28 @@
+
+mat-sidenav-content{
+  padding: 16px;
+  margin-left: 200px;
+}
+
+table {
+  width: 100%;
+}
+
+.search-div{
+  margin: 10px;
+}
+.search-form-field{
+  font-family: Bahnschrift, serif;
+  width: 70%;
+  margin-left: 10px;
+  padding: 5px  10px;
+}
+
+.example-container {
+  height: 400px;
+  overflow: auto;
+}
+
+table {
+  width: 100%;
+}

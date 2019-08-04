@@ -1,0 +1,54 @@
+<div class="login-container">
+  <div class="login-content">
+    <mat-toolbar class="login-toolbar" color="primary">User Registration <i class="material-icons">
+      account_box
+    </i></mat-toolbar>
+    <mat-card>
+      <form [formGroup]="registerForm" (ngSubmit)="onFormSubmit(registerForm.value)">
+
+        <mat-form-field>
+          <mat-icon matPrefix>person_outline</mat-icon>
+          <input matInput type="fullName" placeholder="Full Name" formControlName="fullName"
+                 [errorStateMatcher]="matcher">
+          <mat-error>
+            <span *ngIf="!registerForm.get('fullName').valid && registerForm.get('fullName').touched">Please enter your Full Name</span>
+          </mat-error>
+        </mat-form-field>
+
+
+        <mat-form-field>
+          <mat-icon matPrefix>place</mat-icon>
+          <input matInput type="address" placeholder="Address" formControlName="address"
+                 [errorStateMatcher]="matcher">
+          <mat-error>
+            <span *ngIf="!registerForm.get('address').valid && registerForm.get('address').touched">Please enter your Address</span>
+          </mat-error>
+        </mat-form-field>
+
+
+        <mat-form-field>
+          <mat-icon matPrefix>mail</mat-icon>
+          <input matInput type="email" placeholder="Email" formControlName="email"
+                 [errorStateMatcher]="matcher">
+          <mat-error>
+            <span *ngIf="!registerForm.get('email').valid && registerForm.get('email').touched">Please enter your email</span>
+          </mat-error>
+        </mat-form-field>
+
+
+        <mat-form-field>
+          <mat-icon matPrefix>lock_outline</mat-icon>
+          <input matInput type="password" placeholder="Password" formControlName="password"
+                 [errorStateMatcher]="matcher">
+          <mat-error>
+            <span *ngIf="!registerForm.get('password').valid && registerForm.get('password').touched">Please enter your password</span>
+          </mat-error>
+        </mat-form-field>
+
+        <button type="submit" mat-raised-button color="primary"  [disabled]="!registerForm.valid" >Registration</button>
+        <button type="submit" mat-stroked-button color="primary" routerLink="">Cancel</button>
+
+      </form>
+    </mat-card>
+  </div>
+</div>

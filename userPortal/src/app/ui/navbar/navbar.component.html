@@ -1,0 +1,13 @@
+<mat-toolbar color="primary" class="navbar">
+  <div>DashBoard</div>
+  <mat-menu #appMenu="matMenu" yPosition="above">
+   <!-- <button mat-menu-item>Change Password</button>-->
+    <button mat-menu-item routerLink="" (click)="logout()">Log Out</button>
+
+
+  </mat-menu>
+
+  <button mat-button [matMenuTriggerFor]="appMenu">
+    {{getCurrentUser()}}
+  </button>
+</mat-toolbar>

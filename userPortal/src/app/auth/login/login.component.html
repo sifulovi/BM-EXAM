@@ -1,0 +1,32 @@
+<div class="login-container">
+  <div class="login-content">
+    <mat-toolbar class="login-toolbar" color="accent">User Portal <i class="material-icons">
+      account_box
+    </i></mat-toolbar>
+    <mat-card>
+      <form [formGroup]="loginForm" (ngSubmit)="onFormSubmit(loginForm.value)">
+        <mat-form-field>
+          <mat-icon matPrefix>person_outline</mat-icon>
+          <input matInput type="email" placeholder="Email" formControlName="email"
+                 [errorStateMatcher]="matcher">
+          <mat-error>
+            <span *ngIf="!loginForm.get('email').valid && loginForm.get('email').touched">Please enter your email</span>
+          </mat-error>
+        </mat-form-field>
+
+        <mat-form-field>
+          <mat-icon matPrefix>lock_outline</mat-icon>
+          <input matInput type="password" placeholder="Password" formControlName="password"
+                 [errorStateMatcher]="matcher">
+          <mat-error>
+            <span *ngIf="!loginForm.get('password').valid && loginForm.get('password').touched">Please enter your password</span>
+          </mat-error>
+        </mat-form-field>
+
+        <button type="submit" [disabled]="!loginForm.valid" mat-raised-button color="primary">Login</button>
+        <p align="center">Are you new here? <a routerLink="/registration">Register Now</a></p>
+
+      </form>
+    </mat-card>
+  </div>
+</div>
