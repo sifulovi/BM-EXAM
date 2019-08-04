@@ -4,12 +4,12 @@
 This is very basic .net core webApi project with Angular 7.
 To run this project you have need to carefully pass under steps.
 ###### Project Features are :
- - User Registraion
+ - User Registration
  - User Login
  - List of Users in Dashboard
 
-##### Techonologies
-- DotNet core
+##### Technology's
+- DotNet core(Database-First approach)
  - Angular 7 with Material UI
  - SQL Server
  - JWT 
