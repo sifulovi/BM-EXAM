@@ -24,7 +24,7 @@ namespace AspNetAngularAuth.Repositories
             if (!VerifyPasswordHash(password, user.Password, user.Salt))
                 return null;
 
-            return user; // auth successful
+            return user; 
         }
 
         public async Task<TblUser> Register(TblUser user, string password)

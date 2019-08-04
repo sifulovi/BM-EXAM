@@ -40,7 +40,7 @@ export class LoginComponent implements OnInit {
           localStorage.setItem('role', res.role);
           localStorage.setItem('userId', res.userId);
           this.router.navigateByUrl('/dashboard');
-          this.toastr.success('WellCome Dude!!');
+          this.toastr.success('Hello ' + res.fullname + ' , Well Come Dude!! ');
         } else {
           this.toastr.error('Please Enter Valid Email and Password');
           this.loginForm.reset();

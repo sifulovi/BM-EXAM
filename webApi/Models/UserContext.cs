@@ -17,7 +17,7 @@ namespace AspNetAngularAuth.Models
         {
             if (!optionsBuilder.IsConfigured)
             {
-                optionsBuilder.UseSqlServer("Server=(local)\\ovisql;Database=BookStore;Trusted_Connection=True;MultipleActiveResultSets= True;");
+                optionsBuilder.UseSqlServer("Server=(local)\\ovisql;Database=UserPortal;Trusted_Connection=True;MultipleActiveResultSets= True;");
             }
         }
 
